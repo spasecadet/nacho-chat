@@ -18,7 +18,7 @@ import { colors } from '../services/colors';
  * @param {Object} props
  */
 function Message(props) {
-  const { displayName, message, timestamp, iconColor } = props;
+  const { displayName, message, timestamp, iconColor, hasImage = false } = props;
   
   // Format the timestamp for display
   const formattedDate = new Date(timestamp.toDate()).toLocaleDateString('us-EN', { 
@@ -32,10 +32,14 @@ function Message(props) {
   return (
     <div css={messageContainer}>
       <div css={iconContainer}>
-        <Icon css={accountIcon} style={{ color: iconColor}}>account_circle</Icon>
+        <Icon css={accountIcon} style={{ color: iconColor }}>account_circle</Icon>
       </div>
       <div css={messageAndNameContainer}>
-        <div>{message}</div>
+        {hasImage ?
+          <div css={imageContainer}><img css={image} alt='user icon' src={`data:image/png;base64, ${message}`}/></div>
+          : 
+          <div>{message}</div>
+        }
         <div css={displayNameContainer}>{displayName}<span css={middot}>&middot;</span>{formattedDate}</div>
       </div>
     </div>
@@ -61,6 +65,14 @@ const accountIcon = css`
 const messageAndNameContainer = css`
   flex: 1 0 0;
   margin-top: 3px;
+`;
+
+const imageContainer = css`
+  max-width: 100vw;
+`;
+
+const image = css`
+  max-width: 100%;
 `;
 
 const displayNameContainer = css`

@@ -30,7 +30,8 @@ function MessageList() {
               displayName={message.name}
               message={message.text}
               iconColor={message.accountColor}
-              timestamp={message.timestamp}>
+              timestamp={message.timestamp}
+              hasImage={message.hasImage}>
             </Message>
           </li>
         );
@@ -60,6 +61,7 @@ function MessageList() {
       
       // Process all changes to watched messages
       snapshot.docChanges().forEach((change) => {
+        
         const msgId = change.doc.id;
         if (!messagesMap[msgId]) {
           const message = change.doc.data();
@@ -83,7 +85,7 @@ function MessageList() {
   // Scroll to the bottom of the messages list when there's a new message.
   useEffect(() => {
     if (uiMessages.length > 0) {
-      messagesEnd.scrollIntoView({ behavior: "smooth" });
+      messagesEnd.scrollIntoView({ behavior: 'smooth' });
     }
   }, [uiMessages, messagesEnd]);
 

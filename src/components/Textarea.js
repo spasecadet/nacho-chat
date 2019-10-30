@@ -10,7 +10,7 @@ import { colors } from '../services/colors';
  * 
  * TODO: If no label is passed in use the placeholder to create a hidden label for a11y.
  *
- * ex: <TextArea onClick={doSomething} />
+ * ex: <TextArea onChange={doSomething} />
  *
  * @param {Object} props
  */

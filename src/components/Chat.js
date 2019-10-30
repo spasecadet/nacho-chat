@@ -5,12 +5,15 @@ import { jsx, css } from '@emotion/core'
 import MessageList from './MessageList';
 import MessageEntry from './MessageEntry';
 
+
+
 /**
  * Displays chat components - list of messages and the message entry component.
  *
  * ex:  <Chat></Chat>
  */
 function Chat() {
+
   return (
     <div css={chatContainer}>
       <MessageList css={messagesList}></MessageList>

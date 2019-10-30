@@ -31,8 +31,8 @@ function App() {
     }
   }
 
-  // On mount subscribe to the auth state.  When the user signs in our out we can change 
-  // what's shown eg chat vs signin components.
+  // On mount subscribe to the auth state.  When the user signs in or out we can change 
+  // what's shown eg: chat vs signin components.
   useEffect(() => {
     const subscriber = firebase.auth().onAuthStateChanged(authStateObserver);
     return subscriber; // unsubscribe this observer on unmount
