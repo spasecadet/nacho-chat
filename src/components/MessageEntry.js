@@ -36,7 +36,7 @@ function MessageEntry() {
   const handleEnter = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      sendMessage();
+      sendMessage(e);
     }
   };
 
