@@ -54,6 +54,7 @@ const header = css`
   color: ${colors.backgroundContrastText};
   align-items: center;
   padding: 0 10px;
+  border-bottom: 2px solid ${colors.quinary};
 `;
 
 const logo = css`

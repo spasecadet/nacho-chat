@@ -50,7 +50,8 @@ function MessageEntry() {
       return;
     }
     const selectedFile = e.target.files ? e.target.files[0] : null;
-    const name = firebase.auth().currentUser.displayName;
+    const currentUser = firebase.auth().currentUser;
+    const name = currentUser.displayName;
     
     try {
       const arrayBuffer = selectedFile ? await selectedFile.arrayBuffer() : null;
@@ -70,7 +71,6 @@ function MessageEntry() {
       console.log(err);
       // TODO: log error...
     }
-    
   };
 
   function _arrayBufferToBase64(buffer) {

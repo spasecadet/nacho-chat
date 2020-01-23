@@ -9,6 +9,7 @@ const colors = {
   quinary: '#FED035',
   background: '#413F40',
   backgroundContrastText: '#ffffff',
+  backgroundContrastMutedText: 'rgba(255, 255, 255, .5)',
   divider: 'rgba(0, 0, 0, .1)',
   inputBorder: 'rgba(0, 0, 0, .3)',
   mutedText: 'rgba(0, 0, 0, .5)',
